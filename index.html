@@ -3,61 +3,835 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Estudio de Micropigmentación - Mónica</title>
-  <meta name="description" content="Micropigmentación, diseño de cejas, lifting de pestañas y formación ebooks.">
+  <title>Mónica Escajal · Micropigmentación & Cejas</title>
+
+  <meta name="description" content="Estudio especializado en micropigmentación de cejas y labios, diseño de cejas e hilo y realce de la mirada. Resultados naturales, sofisticados y atemporales.">
+
+  <!-- Tipografías finas y elegantes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
   <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#faf5f2; color:#333; }
-    header { background:#fff; padding:15px; border-bottom:1px solid #ddd; }
-    nav { max-width:1100px; margin:auto; display:flex; justify-content:space-between; }
-    nav a { margin-left:15px; text-decoration:none; color:#333; }
-    main { max-width:1100px; margin:20px auto; padding:20px; background:#fff; border-radius:12px; }
-    h1 { font-size:32px; margin-bottom:10px; }
-    h2 { margin-top:40px; }
-    .btn { display:inline-block; background:#c07a6b; color:#fff; padding:10px 18px; border-radius:6px; margin-top:10px; text-decoration:none; }
-    footer { text-align:center; margin-top:40px; padding:20px; color:#777; }
+    :root {
+      --bg: #f6f3f0;
+      --bg-soft: #fbf9f7;
+      --card: #ffffff;
+      --text: #222222;
+      --muted: #7d7d7d;
+      --accent: #b89a72;        /* dorado suave */
+      --accent-soft: #e6d8c0;
+      --border: #e2ddd7;
+      --radius-card: 18px;
+      --radius-pill: 999px;
+      --shadow-soft: 0 18px 40px rgba(0,0,0,0.06);
+      --max-width: 1080px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #faf5f0 0, #f3f0ec 40%, #f6f3f0 100%);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(246,243,240,0.9);
+      border-bottom: 1px solid rgba(226,221,215,0.7);
+    }
+
+    .nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 1px solid rgba(184,154,114,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Playfair Display", serif;
+      font-size: 1.05rem;
+      color: var(--accent);
+      background: radial-gradient(circle at 20% 0, #fff 0, #f0e5d9 65%, #e3d6c5 100%);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.05rem;
+    }
+
+    .brand-name {
+      font-family: "Playfair Display", serif;
+      font-size: 0.98rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .brand-tagline {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 1.4rem;
+      font-size: 0.88rem;
+    }
+
+    .nav-menu a {
+      color: var(--muted);
+    }
+
+    .nav-menu a:hover {
+      color: var(--text);
+    }
+
+    .nav-cta {
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(184,154,114,0.75);
+      padding: 0.5rem 1.1rem;
+      font-size: 0.84rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(255,255,255,0.9);
+    }
+
+    .nav-cta:hover {
+      background: #f2e7d7;
+    }
+
+    /* LAYOUT GENERAL */
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1.5rem 1.2rem 3.5rem;
+    }
+
+    section {
+      margin-top: 3.5rem;
+    }
+
+    section:first-of-type {
+      margin-top: 2.4rem;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 1rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .section-title {
+      font-family: "Playfair Display", serif;
+      font-weight: 500;
+      font-size: 1.55rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 380px;
+    }
+
+    /* BOTONES */
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.65rem 1.4rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid transparent;
+      font-size: 0.9rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      background: transparent;
+      transition: all 0.18s ease;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #c8aa7e, #af9163);
+      color: #fff;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 22px 45px rgba(0,0,0,0.12);
+    }
+
+    .btn-ghost {
+      border-color: var(--border);
+      color: var(--muted);
+      background: rgba(255,255,255,0.3);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent-soft);
+      color: var(--text);
+      background: #f8f3ec;
+    }
+
+    /* HERO */
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2.4rem;
+      align-items: center;
+    }
+
+    .hero-heading {
+      font-family: "Playfair Display", serif;
+      font-weight: 500;
+      font-size: clamp(2.15rem, 3vw, 2.6rem);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .hero-lede {
+      font-size: 0.98rem;
+      color: var(--muted);
+      max-width: 480px;
+      margin-bottom: 1.7rem;
+    }
+
+    .hero-meta {
+      margin-top: 1.6rem;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+      max-width: 460px;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .hero-meta-item span {
+      display: block;
+    }
+
+    .hero-meta-label {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.72rem;
+      color: #9a8a73;
+      margin-bottom: 0.2rem;
+    }
+
+    .hero-visual {
+      position: relative;
+      border-radius: 26px;
+      background: radial-gradient(circle at top, #fdf8f3 0, #efe4d6 55%, #e1d4c3 100%);
+      border: 1px solid rgba(226,221,215,0.95);
+      padding: 1.8rem;
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+      min-height: 260px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .hero-visual::before {
+      content: "";
+      position: absolute;
+      inset: 14% 10%;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.7);
+    }
+
+    .hero-card {
+      position: relative;
+      z-index: 1;
+      background: rgba(255,255,255,0.96);
+      border-radius: 20px;
+      padding: 1.3rem 1.4rem;
+      max-width: 270px;
+      box-shadow: 0 18px 38px rgba(0,0,0,0.12);
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(184,154,114,0.35);
+      padding: 0.15rem 0.75rem;
+      font-size: 0.73rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #8a7454;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-card h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 1.05rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .hero-card p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-card-footer {
+      font-size: 0.8rem;
+      color: #8a826f;
+    }
+
+    /* GRID BÁSICA */
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border);
+      padding: 1.3rem 1.3rem 1.25rem;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.04);
+    }
+
+    .card-kicker {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #9c8f7e;
+      margin-bottom: 0.5rem;
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .card-meta {
+      margin-top: 0.75rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* BLOQUE RESULTADOS */
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .result-placeholder {
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border);
+      background: linear-gradient(135deg, #f3ece4, #ffffff);
+      min-height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0.9rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* EBOOKS */
+
+    .ebooks-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .price {
+      margin-top: 0.45rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .ebook-tag {
+      display: inline-flex;
+      align-items: center;
+      border-radius: var(--radius-pill);
+      padding: 0.12rem 0.6rem;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #8a7454;
+      background: #f5ebdd;
+      margin-bottom: 0.55rem;
+    }
+
+    /* CONTACTO */
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 2rem;
+    }
+
+    .contact-block p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-list {
+      list-style: none;
+      margin: 0.5rem 0 0;
+      padding: 0;
+      font-size: 0.9rem;
+    }
+
+    .contact-list li + li {
+      margin-top: 0.2rem;
+    }
+
+    form {
+      background: var(--card);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border);
+      box-shadow: 0 16px 38px rgba(0,0,0,0.04);
+      padding: 1.4rem 1.5rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.8rem;
+      margin-bottom: 0.2rem;
+      color: var(--muted);
+    }
+
+    input, textarea {
+      width: 100%;
+      border-radius: 999px;
+      border: 1px solid #d8d1c7;
+      padding: 0.65rem 0.85rem;
+      margin-bottom: 0.8rem;
+      font-size: 0.88rem;
+      background: #fbf9f7;
+      outline: none;
+      transition: border-color 0.15s ease, background 0.15s ease;
+    }
+
+    textarea {
+      border-radius: 18px;
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    input:focus, textarea:focus {
+      border-color: var(--accent);
+      background: #ffffff;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.4rem 1.2rem 2rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    footer span {
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .hero-visual {
+        order: -1;
+      }
+
+      .grid-3,
+      .results-grid,
+      .ebooks-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-menu {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      main {
+        padding-inline: 1rem;
+      }
+
+      .grid-3,
+      .results-grid,
+      .ebooks-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .brand-tagline {
+        display: none;
+      }
+    }
   </style>
 </head>
 <body>
 
 <header>
-  <nav>
-    <div><strong>Mónica · Micropigmentación</strong></div>
-    <div>
+  <nav class="nav">
+    <div class="nav-left">
+      <!-- Sustituye este bloque por tu logo real si lo deseas -->
+      <!-- Ejemplo: <img src="ruta-de-tu-logo.svg" alt="Mónica Escajal" style="height:34px;"> -->
+      <div class="logo-mark">M</div>
+      <div class="brand-text">
+        <div class="brand-name">Mónica Escajal</div>
+        <div class="brand-tagline">Micropigmentación & Cejas</div>
+      </div>
+    </div>
+    <div class="nav-menu">
       <a href="#servicios">Servicios</a>
+      <a href="#resultados">Resultados</a>
       <a href="#ebooks">Ebooks</a>
-      <a href="#contacto">Contacto</a>
+      <a href="#contacto" class="nav-cta">Agendar cita</a>
     </div>
   </nav>
 </header>
 
 <main>
-  <h1>Micropigmentación y belleza natural</h1>
-  <p>Especialista en cejas, labios, lifting de pestañas y formación para profesionales.</p>
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <h1 class="hero-heading">
+        Micropigmentación natural, sofisticada y atemporal.
+      </h1>
+      <p class="hero-lede">
+        Estudio especializado en cejas, labios y mirada. Trabajo con criterios
+        técnicos claros y una estética minimalista para realzar tu rostro sin
+        que dejes de reconocerte.
+      </p>
 
-  <a href="#contacto" class="btn">Reservar cita</a>
+      <div style="display:flex; flex-wrap:wrap; gap:0.6rem;">
+        <a href="#contacto" class="btn btn-primary">Reservar cita</a>
+        <a href="#servicios" class="btn btn-ghost">Ver servicios</a>
+      </div>
 
-  <h2 id="servicios">Servicios</h2>
-  <ul>
-    <li>Micropigmentación de cejas</li>
-    <li>Micropigmentación de labios</li>
-    <li>Lifting y laminado de pestañas</li>
-    <li>Diseño de cejas e hilo</li>
-    <li>Eliminación de micropigmentación / tatuaje</li>
-  </ul>
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Resultados</span>
+          <span>Enfoque natural, respetando piel y facciones.</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Servicios</span>
+          <span>Cejas, labios, mirada y eliminación de trabajos antiguos.</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Formación</span>
+          <span>Ebooks y recursos para técnicas que quieren subir de nivel.</span>
+        </div>
+      </div>
+    </div>
 
-  <h2 id="ebooks">Ebooks</h2>
-  <p>Aquí podrás vender tus ebooks. Cada uno tendrá su botón de compra.</p>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-pill">Cejas & labios · piel primero</div>
+        <h2>Diseños que leen tu rostro, no la tendencia.</h2>
+        <p>
+          Analizo proporciones, gestualidad y estilo de vida para proponerte
+          una solución realista, elegante y sostenible en el tiempo.
+        </p>
+        <div class="hero-card-footer">
+          Sesiones con briefing previo, explicación del proceso y seguimiento
+          tras la cita.
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <h2 id="contacto">Contacto</h2>
-  <p>Email: tuemail@tudominio.com</p>
-  <p>Instagram: @tuusuario</p>
+  <!-- SERVICIOS -->
+  <section id="servicios">
+    <div class="section-header">
+      <div>
+        <div class="section-title">Servicios</div>
+      </div>
+      <p class="section-subtitle">
+        Protocolos orientados a preservar la piel, trabajar con criterio y
+        lograr resultados que encajan con tu día a día, no solo con la foto
+        del primer día.
+      </p>
+    </div>
+
+    <div class="grid-3">
+      <article class="card">
+        <div class="card-kicker">Cejas</div>
+        <h3>Micropigmentación de cejas</h3>
+        <p>
+          Diseño a medida en base a visagismo, densidad y gestos. Relleno de huecos,
+          corrección de asimetrías y armonización general de la ceja.
+        </p>
+        <div class="card-meta">
+          Ideal para cejas finas, irregulares o con trabajos antiguos a corregir.
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-kicker">Labios</div>
+        <h3>Micropigmentación de labios</h3>
+        <p>
+          Tono suave, saludable y uniforme, sin contornos duros. Mejora el color natural,
+          define de forma sutil y corrige pequeñas asimetrías.
+        </p>
+        <div class="card-meta">
+          Perfecto si quieres efecto “labio maquillado suave” a diario.
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-kicker">Mirada</div>
+        <h3>Lifting y laminado de pestañas</h3>
+        <p>
+          Realce de la pestaña natural con curvatura, orden y nutrición.
+          Alternativa limpia a las extensiones, con mantenimiento cómodo.
+        </p>
+        <div class="card-meta">
+          Duración aproximada: 6–8 semanas según ciclo de pestaña.
+        </div>
+      </article>
+    </div>
+
+    <div class="grid-3" style="margin-top:1.5rem;">
+      <article class="card">
+        <div class="card-kicker">Cejas & depilación</div>
+        <h3>Diseño de cejas e hilo</h3>
+        <p>
+          Estudio de la forma ideal para tus cejas y depilación con hilo para un acabado
+          definido, pulido y respetuoso con la piel.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-kicker">Eliminación</div>
+        <h3>Eliminación de tatuaje / vieja micropigmentación</h3>
+        <p>
+          Aclarado progresivo y seguro de trabajos antiguos que ya no encajan contigo,
+          preparando la zona para un nuevo diseño más actual.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-kicker">Acompañamiento</div>
+        <h3>Recursos para profesionales</h3>
+        <p>
+          Ebooks y materiales descargables para técnicas que quieren mejorar criterio
+          de diseño, color, fotografía y comunicación de resultados.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- RESULTADOS / PORTFOLIO -->
+  <section id="resultados">
+    <div class="section-header">
+      <div>
+        <div class="section-title">Resultados</div>
+      </div>
+      <p class="section-subtitle">
+        Aquí irán tus fotos de antes y después. De momento son marcadores de
+        contenido para que puedas ir sustituyéndolos cuando tengas el material listo.
+      </p>
+    </div>
+
+    <div class="results-grid">
+      <div class="result-placeholder">Antes y después · Cejas</div>
+      <div class="result-placeholder">Antes y después · Labios</div>
+      <div class="result-placeholder">Antes y después · Lifting de pestañas</div>
+      <div class="result-placeholder">Correcciones de trabajos antiguos</div>
+      <div class="result-placeholder">Eliminación / aclarado de pigmentos</div>
+      <div class="result-placeholder">Resultados cicatrizados · enfoque realista</div>
+    </div>
+  </section>
+
+  <!-- EBOOKS -->
+  <section id="ebooks">
+    <div class="section-header">
+      <div>
+        <div class="section-title">Ebooks para técnicas</div>
+      </div>
+      <p class="section-subtitle">
+        Materiales digitales para profesionales que quieren criterios más sólidos
+        de diseño, protocolos más claros y una comunicación visual más cuidada.
+      </p>
+    </div>
+
+    <div class="ebooks-grid">
+      <article class="card">
+        <div class="ebook-tag">Ebook</div>
+        <h3>Guía de diseño de cejas para micropigmentación</h3>
+        <p>
+          Metodología clara para leer el rostro, definir proporciones y tomar
+          decisiones de diseño sin improvisar.
+        </p>
+        <div class="price">XX €</div>
+        <div class="card-meta">
+          Aquí añadirás el enlace real de compra (Gumroad, Payhip, etc.).
+        </div>
+        <a href="#" class="btn btn-ghost" style="margin-top:0.8rem;">Ver ficha</a>
+      </article>
+
+      <article class="card">
+        <div class="ebook-tag">Ebook</div>
+        <h3>Protocolos, fichas y seguimiento de clientas</h3>
+        <p>
+          Plantillas y estructuras para ordenar tu proceso desde la consulta
+          inicial hasta el seguimiento post-tratamiento.
+        </p>
+        <div class="price">XX €</div>
+        <a href="#" class="btn btn-ghost" style="margin-top:0.8rem;">Ver ficha</a>
+      </article>
+
+      <article class="card">
+        <div class="ebook-tag">Pack</div>
+        <h3>Pack formación online</h3>
+        <p>
+          Combina varios ebooks con un precio especial para técnicas que están
+          consolidando su estudio.
+        </p>
+        <div class="price">XX €</div>
+        <a href="#" class="btn btn-ghost" style="margin-top:0.8rem;">Ver pack</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <div class="section-header">
+      <div>
+        <div class="section-title">Contacto y reservas</div>
+      </div>
+      <p class="section-subtitle">
+        Trabajo con agenda organizada y plazas limitadas. Cuéntame qué necesitas y te respondo con
+        propuesta, disponibilidad y preparación previa a la cita.
+      </p>
+    </div>
+
+    <div class="contact-layout">
+      <div class="contact-block">
+        <p>
+          Indica aquí tu ciudad, zona y la forma de contacto que prefieras para gestionar las citas
+          (WhatsApp, email, formulario…).
+        </p>
+        <ul class="contact-list">
+          <li><strong>Ubicación:</strong> Ciudad / Barrio</li>
+          <li><strong>WhatsApp:</strong> +34 XXX XXX XXX</li>
+          <li><strong>Email:</strong> tuemail@monicaescajal.com</li>
+          <li><strong>Instagram:</strong> @tuusuario</li>
+        </ul>
+        <p style="margin-top:0.9rem; font-size:0.82rem; color:var(--muted);">
+          Una vez reciba tu mensaje, te escribiré con la información completa y los pasos a seguir
+          antes de tu cita.
+        </p>
+      </div>
+
+      <!-- Formulario maquetado (sin envío real todavía) -->
+      <form>
+        <label for="nombre">Nombre</label>
+        <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" />
+
+        <label for="servicio">Servicio de interés</label>
+        <input id="servicio" name="servicio" type="text" placeholder="Cejas, labios, lifting, formación..." />
+
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" placeholder="Cuéntame qué te gustaría mejorar o qué dudas tienes."></textarea>
+
+        <button type="submit" class="btn btn-primary" style="width:100%; margin-top:0.2rem;">
+          Enviar consulta (maqueta)
+        </button>
+      </form>
+    </div>
+  </section>
 </main>
 
 <footer>
-  © 2025 Mónica · Micropigmentación
+  <span>Mónica Escajal</span> · Micropigmentación & Cejas ·
+  <span id="year"></span>
 </footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
-
-
