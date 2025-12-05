@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mónica Escajal · Micropigmentación & Cejas</title>
+  <title>Mónica Escajal · Micropigmentación avanzada</title>
 
-  <meta name="description" content="Estudio especializado en micropigmentación de cejas y labios, diseño de cejas e hilo y realce de la mirada. Resultados naturales, sofisticados y atemporales.">
+  <meta name="description" content="Estudio especializado en micropigmentación avanzada de cejas y labios, diseño de cejas e hilo y realce de la mirada. Resultados naturales, sofisticados y atemporales.">
 
   <!-- Tipografías finas y elegantes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -375,26 +375,50 @@
       color: var(--muted);
     }
 
-    /* BLOQUE RESULTADOS */
+    /* SOBRE MÍ */
 
-    .results-grid {
+    .about-layout {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.2rem;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 2rem;
+      align-items: center;
     }
 
-    .result-placeholder {
-      border-radius: var(--radius-card);
+    .about-photo {
+      border-radius: 24px;
+      overflow: hidden;
       border: 1px solid var(--border);
       background: linear-gradient(135deg, #f3ece4, #ffffff);
-      min-height: 140px;
+      min-height: 260px;
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      padding: 0.9rem;
+      padding: 0.8rem;
+    }
+
+    .about-photo img {
+      border-radius: 20px;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      max-height: 360px;
+    }
+
+    .about-photo-placeholder {
       font-size: 0.85rem;
       color: var(--muted);
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .about-text p {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 0.7rem;
+    }
+
+    .about-text p:last-child {
+      margin-bottom: 0;
     }
 
     /* EBOOKS */
@@ -409,6 +433,7 @@
       margin-top: 0.45rem;
       font-size: 0.9rem;
       font-weight: 500;
+      color: #8a7454;
     }
 
     .ebook-tag {
@@ -513,7 +538,6 @@
       }
 
       .grid-3,
-      .results-grid,
       .ebooks-grid {
         grid-template-columns: 1fr 1fr;
       }
@@ -526,6 +550,10 @@
       .nav-menu {
         display: none;
       }
+
+      .about-layout {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 640px) {
@@ -534,7 +562,6 @@
       }
 
       .grid-3,
-      .results-grid,
       .ebooks-grid {
         grid-template-columns: 1fr;
       }
@@ -559,12 +586,12 @@
       <div class="logo-mark">M</div>
       <div class="brand-text">
         <div class="brand-name">Mónica Escajal</div>
-        <div class="brand-tagline">Micropigmentación & Cejas</div>
+        <div class="brand-tagline">Micropigmentación avanzada</div>
       </div>
     </div>
     <div class="nav-menu">
       <a href="#servicios">Servicios</a>
-      <a href="#resultados">Resultados</a>
+      <a href="#sobre-mi">Sobre mí</a>
       <a href="#ebooks">Ebooks</a>
       <a href="#contacto" class="nav-cta">Agendar cita</a>
     </div>
@@ -576,7 +603,7 @@
   <section class="hero">
     <div>
       <h1 class="hero-heading">
-        Micropigmentación natural, sofisticada y atemporal.
+        Micropigmentación sofisticada, elegante y natural.
       </h1>
       <p class="hero-lede">
         Estudio especializado en cejas, labios y mirada. Trabajo con criterios
@@ -702,25 +729,44 @@
     </div>
   </section>
 
-  <!-- RESULTADOS / PORTFOLIO -->
-  <section id="resultados">
+  <!-- SOBRE MÍ -->
+  <section id="sobre-mi">
     <div class="section-header">
       <div>
-        <div class="section-title">Resultados</div>
+        <div class="section-title">Sobre mí</div>
       </div>
       <p class="section-subtitle">
-        Aquí irán tus fotos de antes y después. De momento son marcadores de
-        contenido para que puedas ir sustituyéndolos cuando tengas el material listo.
+        Un poco de contexto sobre cómo llegué a la micropigmentación y cuál es mi enfoque a la hora de trabajar.
       </p>
     </div>
 
-    <div class="results-grid">
-      <div class="result-placeholder">Antes y después · Cejas</div>
-      <div class="result-placeholder">Antes y después · Labios</div>
-      <div class="result-placeholder">Antes y después · Lifting de pestañas</div>
-      <div class="result-placeholder">Correcciones de trabajos antiguos</div>
-      <div class="result-placeholder">Eliminación / aclarado de pigmentos</div>
-      <div class="result-placeholder">Resultados cicatrizados · enfoque realista</div>
+    <div class="about-layout">
+      <div class="about-photo">
+        <!-- Sustituye "tu-foto.jpg" por el nombre real de tu archivo de foto -->
+        <!-- Ejemplo: subes "monica.jpg" al repo y usas src="monica.jpg" -->
+        <div class="about-photo-placeholder">
+          Aquí irá tu fotografía.  
+          Cuando tengas la imagen lista, súbela a GitHub y reemplaza este bloque por:<br>
+          &lt;img src="monica.jpg" alt="Mónica Escajal"&gt;
+        </div>
+      </div>
+      <div class="about-text">
+        <p>
+          Mi camino hacia la micropigmentación nació de una inquietud muy simple: ayudar a que las personas se
+          vean y se sientan mejor sin perder su esencia. Vengo del mundo de la belleza, pero la micropigmentación
+          me permitió trabajar de una forma más precisa, técnica y a largo plazo.
+        </p>
+        <p>
+          No concibo este trabajo sin formación constante. Actualizo mis conocimientos de manera continua para
+          entender mejor la piel, los pigmentos, la cicatrización y las tendencias, y así poder decidir qué
+          tiene sentido aplicar en cada caso y qué no.
+        </p>
+        <p>
+          Mi enfoque es claro: resultados sofisticados, elegantes y naturales. Prefiero quedarme un paso antes
+          de lo excesivo y priorizar la salud de la piel, la armonía global del rostro y la sensación de que,
+          al mirarte al espejo, sigues siendo tú, solo que más alineada con lo que quieres proyectar.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -744,7 +790,7 @@
           Metodología clara para leer el rostro, definir proporciones y tomar
           decisiones de diseño sin improvisar.
         </p>
-        <div class="price">XX €</div>
+        <div class="price">Próximamente</div>
         <div class="card-meta">
           Aquí añadirás el enlace real de compra (Gumroad, Payhip, etc.).
         </div>
@@ -758,7 +804,7 @@
           Plantillas y estructuras para ordenar tu proceso desde la consulta
           inicial hasta el seguimiento post-tratamiento.
         </p>
-        <div class="price">XX €</div>
+        <div class="price">Próximamente</div>
         <a href="#" class="btn btn-ghost" style="margin-top:0.8rem;">Ver ficha</a>
       </article>
 
@@ -769,7 +815,7 @@
           Combina varios ebooks con un precio especial para técnicas que están
           consolidando su estudio.
         </p>
-        <div class="price">XX €</div>
+        <div class="price">Próximamente</div>
         <a href="#" class="btn btn-ghost" style="margin-top:0.8rem;">Ver pack</a>
       </article>
     </div>
@@ -790,14 +836,15 @@
     <div class="contact-layout">
       <div class="contact-block">
         <p>
-          Indica aquí tu ciudad, zona y la forma de contacto que prefieras para gestionar las citas
-          (WhatsApp, email, formulario…).
+          Atiendo entre Galicia y Cantabria. Trabajo con cita previa y una comunicación muy cuidada
+          antes de cualquier procedimiento para que sepas exactamente qué vamos a hacer y qué puedes esperar.
         </p>
         <ul class="contact-list">
-          <li><strong>Ubicación:</strong> Ciudad / Barrio</li>
-          <li><strong>WhatsApp:</strong> +34 XXX XXX XXX</li>
-          <li><strong>Email:</strong> tuemail@monicaescajal.com</li>
-          <li><strong>Instagram:</strong> @tuusuario</li>
+          <li><strong>Ubicación:</strong> Galicia / Cantabria</li>
+          <li><strong>WhatsApp:</strong> +34 649 009 189</li>
+          <li><strong>Email principal:</strong> info@monicaescajal.com</li>
+          <li><strong>Email alternativo:</strong> escajalmonica@gmail.com</li>
+          <li><strong>Instagram:</strong> @monicaescajal</li>
         </ul>
         <p style="margin-top:0.9rem; font-size:0.82rem; color:var(--muted);">
           Una vez reciba tu mensaje, te escribiré con la información completa y los pasos a seguir
@@ -825,7 +872,7 @@
 </main>
 
 <footer>
-  <span>Mónica Escajal</span> · Micropigmentación & Cejas ·
+  <span>Mónica Escajal</span> · Micropigmentación avanzada ·
   <span id="year"></span>
 </footer>
 
