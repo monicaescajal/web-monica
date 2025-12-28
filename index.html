@@ -521,6 +521,48 @@
         display: none;
       }
     }
+    .menu-toggle{
+  display:none;
+  border:1px solid var(--border);
+  background: rgba(255,255,255,0.9);
+  border-radius: var(--radius-pill);
+  padding: 0.45rem 0.85rem;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+@media (max-width: 900px){
+  .menu-toggle{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .nav-menu{
+    display:none;
+    position:absolute;
+    top: 64px;
+    right: 16px;
+    left: 16px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 0.9rem;
+    box-shadow: var(--shadow-soft);
+    flex-direction: column;
+    gap: 0.9rem;
+    z-index: 999;
+  }
+
+  .nav-menu.open{
+    display:flex;
+  }
+
+  .nav{
+    position: relative;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -545,6 +587,7 @@
     </div>
   </nav>
 </header>
+
 
 
 <main>
@@ -816,9 +859,18 @@
     document.getElementById('cookie-banner').style.display = 'none';
   }
 </script>
+<script>
+  function toggleMenu(){
+    const menu = document.getElementById('navMenu');
+    if(!menu) return;
+    menu.classList.toggle('open');
+  }
+</script>
+
 
 </body>
 </html>
+
 
 
 
