@@ -515,22 +515,24 @@
 <header>
   <nav class="nav">
     <div class="nav-left">
-      <!-- Sustituye este bloque por tu logo real si lo deseas -->
-      <!-- Ejemplo: <img src="logo-monica.svg" alt="Mónica Escajal" style="height:34px;"> -->
-      <img src="logo.png" alt="Mónica Escajal" class="logo-img"style="height:34px;"> 
+      <img src="logo.png" alt="Mónica Escajal" class="logo-img">
       <div class="brand-text">
         <div class="brand-name">Mónica Escajal</div>
         <div class="brand-tagline">Micropigmentación avanzada</div>
       </div>
     </div>
-    <div class="nav-menu">
-      <a href="#servicios">Servicios</a>
+
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+    <div class="nav-menu" id="navMenu">
+      <a href="#servicios">Tratamientos</a>
       <a href="#sobre-mi">Sobre mí</a>
-      <a href="#ebooks">Ebooks</a>
-      <a href="#contacto" class="nav-cta">Agendar cita</a>
+      <a href="#ebooks">Material descargable</a>
+      <a href="#contacto" class="nav-cta">Contacto</a>
     </div>
   </nav>
 </header>
+
 
 <main>
   <!-- HERO -->
@@ -804,6 +806,7 @@
 
 </body>
 </html>
+
 
 
 
